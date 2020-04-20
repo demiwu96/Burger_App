@@ -12,7 +12,7 @@
                 <textarea id="burger" class="materialize-textarea"></textarea>
                 <label for="burger">Burger Name</label>
             </div>
-            <a class="waves-effect waves-light btn orange darken-4"><i
+            <a class="waves-effect waves-orange btn orange darken-4" id="submitBtn"><i
                     class="material-icons left">check_circle</i>Submit</a>
         </div>
     </form>
@@ -24,13 +24,14 @@
             <h4>All Burgers</h4>
         </div>
         <div class="row">
-            <ul>
+            <ul id="orderlist">
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li data-id="{{this.id}}">
-                    {{this.burger_name}}
+                    {{this.id}}. {{this.burger_name}}
 
-                    <button class="devourBtn" data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">
+                    <button class="waves-effect waves-orange btn-small orange darken-4 devourBtn"
+                        data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">
                         Devour it!
                     </button>
                 </li>
@@ -46,11 +47,11 @@
             <h4>Devoured Burgers</h4>
         </div>
         <div class="row">
-            <ul>
+            <ul id="devouredlist">
                 {{#each burgers}}
                 {{#if devoured}}
                 <li data-id="{{this.id}}">
-                    {{this.burger_name}}
+                    {{this.id}}. {{this.burger_name}}
                 </li>
                 {{/if}}
                 {{/each}}
