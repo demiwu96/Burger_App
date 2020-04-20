@@ -21,4 +21,5 @@ This is a MVC web application that allows users to order and keep track of the b
 Yu-Hsuan Wu
 
 ## Demo
+![demo](/demo/demo.gif)
 [Click here]() to see my project
