@@ -32,12 +32,20 @@ $(function () {
         }).then(
             function () {
                 console.log("the burger has been eaten");
-                // Reload the page to get the updated list
                 location.reload();
             }
         );
     });
 
-
+    $("#clear").click(function (event) {
+        $.ajax("/api/clearburgers", {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("cleared all devoured burgers");
+                location.reload();
+            }
+        );
+    })
 });
 
