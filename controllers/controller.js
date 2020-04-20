@@ -4,13 +4,20 @@ var burger = require("../models/burger.js");
 
 router.get("/", function (req, res) {
     burger.all(function (data) {
-        var hbsObject = {
-            burgers: data
-        };
+        var hbsObject = { burgers: data };
         console.log(hbsObject);
+
         res.render("index", hbsObject);
-        res.render("index");
     });
 });
+
+router.post("/api/burgers", function(req, res) {
+    let name = req.body.name;
+
+    burger.insert(name, function(result) {
+      // Send back the ID
+      res.json({ id: result.insertId });
+    });
+  });
 
 module.exports = router;
