@@ -5,33 +5,33 @@
 </div>
 
 <div class="row center-align">
-    <form class="col s12">
+    <form class="col s12 orderBurger-form">
         <div class="row">
             <div class="input-field col s6">
-                <i class="material-icons prefix">local_dining</i>
+                <i class="material-icons prefix orange-text text-darken-4">local_dining</i>
                 <textarea id="burger" class="materialize-textarea"></textarea>
                 <label for="burger">Burger Name</label>
             </div>
-            <a class="waves-effect waves-orange btn orange darken-4" id="submitBtn"><i
-                    class="material-icons left">check_circle</i>Submit</a>
+            <button class="waves-effect waves-orange btn orange darken-4" type="submit" name="action" id="submitBtn">
+                <i class="material-icons left">send</i>Submit</button>
         </div>
     </form>
 </div>
 
-<div class="row center-align">
+<div class="row center-align" id="listDiv">
     <div class="col s12 m6">
         <div class="row center-align">
-            <h4>All Burgers</h4>
+            <h4>Ordered Burgers</h4>
         </div>
         <div class="row">
             <ul id="orderlist">
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li data-id="{{this.id}}">
+                <li>
                     {{this.id}}. {{this.burger_name}}
 
                     <button class="waves-effect waves-orange btn-small orange darken-4 devourBtn"
-                        data-burgerid="{{this.id}}" data-devoured="{{this.devoured}}">
+                        data-burgerid="{{this.id}}">
                         Devour it!
                     </button>
                 </li>
@@ -50,8 +50,8 @@
             <ul id="devouredlist">
                 {{#each burgers}}
                 {{#if devoured}}
-                <li data-id="{{this.id}}">
-                    {{this.id}}. {{this.burger_name}}
+                <li>
+                    {{this.id}}. {{this.burger_name}}<i class="material-icons right">done</i>
                 </li>
                 {{/if}}
                 {{/each}}
