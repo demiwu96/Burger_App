@@ -8,6 +8,11 @@ This is a MVC web application that allows users to order and keep track of the b
     * [Express](http://expressjs.com/)
     * [Handlebars](https://handlebarsjs.com/)
     * [MySQL](https://www.npmjs.com/package/mysql)
+    
+Run the following commend in the terminal to install the required npm:
+```sh
+npm install
+```
 
 ## Built with
 * HTML
