@@ -22,4 +22,5 @@ Yu-Hsuan Wu
 
 ## Demo
 ![demo](/demo/demo.gif)
-[Click here]() to see my project
+<br>
+[Click here](https://burgerapp-042020.herokuapp.com/) to see my project
