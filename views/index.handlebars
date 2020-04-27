@@ -9,7 +9,7 @@
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix orange-text text-darken-4">local_dining</i>
-                <textarea id="burger" class="materialize-textarea"></textarea>
+                <input id="burger" type="text"></input>
                 <label for="burger">Burger Name</label>
             </div>
             <button class="waves-effect waves-orange btn orange darken-4" type="submit" name="action" id="submitBtn">
@@ -24,11 +24,11 @@
             <h4>Ordered Burgers</h4>
         </div>
         <div class="row">
-            <ul id="orderlist">
+            <ol id="orderlist">
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li>
-                    {{id}}. {{burger_name}}
+                    {{burger_name}}
 
                     <button class="waves-effect waves-orange btn-small orange darken-4 devourBtn"
                         data-burgerid="{{id}}">
@@ -37,7 +37,7 @@
                 </li>
                 {{/unless}}
                 {{/each}}
-            </ul>
+            </ol>
         </div>
 
     </div>
@@ -49,15 +49,15 @@
                 all</a>
         </div>
         <div class="row">
-            <ul id="devouredlist">
+            <ol id="devouredlist">
                 {{#each burgers}}
                 {{#if devoured}}
                 <li>
-                    {{id}}. {{burger_name}}<i class="material-icons right">done</i>
+                    {{burger_name}}<i class="material-icons right">done</i>
                 </li>
                 {{/if}}
                 {{/each}}
-            </ul>
+            </ol>
         </div>
     </div>
 </div>
