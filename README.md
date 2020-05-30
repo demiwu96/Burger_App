@@ -1,4 +1,4 @@
-# Burger_app
+# Burger App
 
 ## Description
 This is a MVC web application that allows users to order and keep track of the burgers they have eaten.
